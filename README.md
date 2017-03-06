@@ -1,4 +1,4 @@
-Collection of (very) simple program with educational purposes.
+Collection of (very) simple programs with educational purposes.
 - template
 - overload
 - operators ...
