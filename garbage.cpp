@@ -1,18 +1,18 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 class abc {
 
-   public:
-      int i;
+public:
+	int i;
 
-      abc(int i) {
-         i = i;
-      }
+	abc(int i) {
+		i = i;
+	}
 };
 
 main() {
-   abc m(5);
+	abc m(5);
 
-   cout<<m.i << endl;
+	cout<<m.i << endl;
 }

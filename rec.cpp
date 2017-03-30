@@ -1,4 +1,5 @@
-#include<iostream>
+// ERROR NOT COMPILE
+#include <iostream>
 
 using namespace std;
 void f() {

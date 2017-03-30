@@ -8,7 +8,7 @@ using num = double;
 
 class matrix {
 protected:
-	vector<vector<num>> data;
+	vector<vector<num> > data;
 	int m, n;
 public:
 	explicit matrix(int m_, int n_) {
@@ -18,13 +18,23 @@ public:
 			data[i].resize(n+1);
 	}
 
-	vector<num>& operator[](int i) { return data[i]; }
-	num get(int i, int j) const { return data[i][j]; }
-	int rows() const { return m; }
-	int cols() const { return n; }
+	vector<num>& operator[](int i) {
+		return data[i];
+	}
+	num get(int i, int j) const {
+		return data[i][j];
+	}
+	int rows() const {
+		return m;
+	}
+	int cols() const {
+		return n;
+	}
 
 	explicit operator num() // Convert to scalar (if 1x1)
-	{ assert(m==1 && n==1); return data[1][1]; }
+	{
+		assert(m==1 && n==1); return data[1][1];
+	}
 
 	matrix operator+(const matrix& B) { // Return self+B
 		assert(m==B.m && n==B.n);
@@ -91,18 +101,28 @@ public:
 };
 
 struct cvec : public matrix { // Column vector class
-	cvec(int m_) : matrix(m_, 1) { }
-	num& operator[](int i) { return data[i][1]; }
+	cvec(int m_) : matrix(m_, 1) {
+	}
+	num& operator[](int i) {
+		return data[i][1];
+	}
 	cvec(const matrix& A, int j) : matrix(A.rows(), 1) { // Copy the j-th column of A
 		for(int i=1; i<=m; i++) data[i][1] = A.get(i,j);
 	}
-	cvec operator+(const cvec& b) { return cvec(matrix::operator+(b), 1); }
-	cvec operator*(num c) { return cvec(matrix::operator*(c), 1); }
+	cvec operator+(const cvec& b) {
+		return cvec(matrix::operator+(b), 1);
+	}
+	cvec operator*(num c) {
+		return cvec(matrix::operator*(c), 1);
+	}
 };
 
 struct rvec : public matrix { // Row vector class
-	rvec(int n_) : matrix(1, n_) { }
-	num& operator[](int j) { return data[1][j]; }
+	rvec(int n_) : matrix(1, n_) {
+	}
+	num& operator[](int j) {
+		return data[1][j];
+	}
 	rvec(const matrix& A, int i) : matrix(1, A.cols()) { // Copy the i-th row of A
 		for(int j=1; j<=n; j++) data[1][j] = A.get(i,j);
 	}

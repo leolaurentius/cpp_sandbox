@@ -5,18 +5,18 @@
 using namespace std;
 
 int main () {
-  string line;
-  ifstream myfile ("example.txt");
-  if (myfile.is_open())
-  {
-    while ( getline (myfile,line) )
-    {
-      cout << line << '\n';
-    }
-    myfile.close();
-  }
+	string line;
+	ifstream myfile ("example.txt");
+	if (myfile.is_open())
+	{
+		while ( getline (myfile,line) )
+		{
+			cout << line << '\n';
+		}
+		myfile.close();
+	}
 
-  else cout << "Unable to open file";
+	else cout << "Unable to open file";
 
-  return 0;
+	return 0;
 }
