@@ -31,8 +31,6 @@ int main () {
 		pb = dynamic_cast<Base*>(pbc);
 		if (pb==0) cout << "Null pointer on 3rds type-cast.\n";
 		pb->dummy();
-
-
 	} catch (exception& e) {cout << "Exception: " << e.what();}
 	return 0;
 }
