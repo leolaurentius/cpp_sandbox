@@ -4,11 +4,11 @@
 using namespace std;
 
 class Base {public:    virtual void dummy() {
-		    cout<< "pippo\n";
+		    cout<< "Mike Mouse\n";
 	    }
 };
 class Derived : public Base { int a; public: void dummy() {
-				      cout << "paperino" << endl;
+				      cout << "Donald Duck" << endl;
 			      }
 };
 

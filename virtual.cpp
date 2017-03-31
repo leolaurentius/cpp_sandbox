@@ -48,7 +48,7 @@ public:
 int main(int argc, const char * argv[]) {
 	A a;
 	a.foo();
-	cout <l< endl;
+	cout << endl;
 	//
 	int n[] = {1, 2, 3, 4, 5, 6};
 	cout << (1 + 3)[n] - n[0] + (n + 1)[2] << endl;
